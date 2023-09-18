@@ -90,46 +90,44 @@ Widget customBestSellerItem({
         ),
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.50,
-          child: Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsetsDirectional.only(top: 7.0),
-                  child: Text(
-                    bookModel.volumeInfo.title!,
-                    style: Styles.textStyle20.copyWith(fontSize: 18.0),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-                const SizedBox(
-                  height: 7.0,
-                ),
-                Text(
-                  bookModel.volumeInfo.authors![0],
-                  style: Styles.textStyle14.copyWith(color: Colors.grey),
-                  maxLines: 1,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsetsDirectional.only(top: 7.0),
+                child: Text(
+                  bookModel.volumeInfo.title!,
+                  style: Styles.textStyle20.copyWith(fontSize: 18.0),
+                  maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
-                const SizedBox(
-                  height: 7.0,
-                ),
-                Row(
-                  children: [
-                    Text(
-                      'Free',
-                      style: Styles.textStyle20.copyWith(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16.0,
-                      ),
+              ),
+              const SizedBox(
+                height: 7.0,
+              ),
+              Text(
+                bookModel.volumeInfo.authors![0],
+                style: Styles.textStyle14.copyWith(color: Colors.grey),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+              const SizedBox(
+                height: 7.0,
+              ),
+              Row(
+                children: [
+                  Text(
+                    'Free',
+                    style: Styles.textStyle20.copyWith(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16.0,
                     ),
-                    const Spacer(),
-                    ratingItem(bookModel: bookModel, isDetail: false),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                  const Spacer(),
+                  ratingItem(bookModel: bookModel, isDetail: false),
+                ],
+              ),
+            ],
           ),
         ),
       ],
@@ -202,7 +200,7 @@ Widget ratingItem({
         child: Icon(
           FontAwesomeIcons.solidStar,
           color: Colors.amber,
-          size: 17.0,
+          size: 15.0,
         ),
       ),
       const SizedBox(

@@ -36,11 +36,12 @@ class BookDetailsViewBody extends StatelessWidget {
                   padding: EdgeInsetsDirectional.symmetric(
                       horizontal: widthMedia * 0.15),
                   child: SizedBox(
-                      height: 250.0,
-                      child: customListViewItem(
-                        context: context,
-                        imageUrl: detailBook.imageLinks?.thumbnail ?? "",
-                      )),
+                    height: 250.0,
+                    child: customListViewItem(
+                      context: context,
+                      imageUrl: detailBook.imageLinks?.thumbnail ?? "",
+                    ),
+                  ),
                 ),
                 const SizedBox(
                   height: 20.0,
@@ -114,7 +115,7 @@ class BookDetailsViewBody extends StatelessWidget {
                           ),
                           child: MaterialButton(
                             onPressed: () {
-                              launchCustomUr(context , detailBook.previewLink);
+                              launchCustomUr(context, detailBook.previewLink);
                             },
                             child: const Text(
                               'Preview',
@@ -142,49 +143,49 @@ class BookDetailsViewBody extends StatelessWidget {
                 const SizedBox(
                   height: 16.0,
                 ),
-                BlocBuilder<FeaturedBooksCubit , FeaturedBooksState>(
+                BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
                   builder: (BuildContext context, FeaturedBooksState state) {
-                    if(state is SimilarBooksSuccess)
-                      {
-                        return  LimitedBox(
-                          maxHeight: 120.0,
-                          child: ListView.separated(
-                            scrollDirection: Axis.horizontal,
-                            itemBuilder: (context, index) =>
-                                GestureDetector(
-                                  onTap: () {
-                                    GoRouter.of(context).push(
-                                      '/DetailsView',
-                                    );
-                                    detailBook = state.books[index].volumeInfo;
-                                  },
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(15.0),
-                                    child: AspectRatio(
-                                      aspectRatio: 3 / 4,
-                                      child: CachedNetworkImage(
-                                        fit: BoxFit.fill,
-                                        imageUrl: state.books[index].volumeInfo.imageLinks?.thumbnail ?? '',
-                                        errorWidget: (context, url, error) => const Icon(
-                                          Icons.error,
-                                        ),
-                                      ),
-                                    ),
+                    if (state is SimilarBooksSuccess) {
+                      return LimitedBox(
+                        maxHeight: 120.0,
+                        child: ListView.separated(
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) => GestureDetector(
+                            onTap: () {
+                              GoRouter.of(context).push(
+                                '/DetailsView',
+                              );
+                              detailBook = state.books[index].volumeInfo;
+                            },
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(15.0),
+                              child: AspectRatio(
+                                aspectRatio: 3 / 4,
+                                child: CachedNetworkImage(
+                                  fit: BoxFit.fill,
+                                  imageUrl: state.books[index].volumeInfo
+                                          .imageLinks?.thumbnail ??
+                                      '',
+                                  errorWidget: (context, url, error) =>
+                                      const Icon(
+                                    Icons.error,
                                   ),
                                 ),
-                            separatorBuilder: (context, index) => const SizedBox(
-                              width: 10.0,
+                              ),
                             ),
-                            itemCount: state.books.length,
                           ),
-                        );
-                      }else if(state is SimilarBooksFailure)
-                        {
-                          return Text(
-                            state.errMessage,
-                            style: Styles.textStyle16,
-                          );
-                        } else {
+                          separatorBuilder: (context, index) => const SizedBox(
+                            width: 10.0,
+                          ),
+                          itemCount: state.books.length,
+                        ),
+                      );
+                    } else if (state is SimilarBooksFailure) {
+                      return Text(
+                        state.errMessage,
+                        style: Styles.textStyle16,
+                      );
+                    } else {
                       return const Center(
                         child: CircularProgressIndicator(),
                       );
