@@ -31,7 +31,6 @@ class SearchViewBody extends StatelessWidget {
             ),
             defaultTextField(
               label: 'Search for a book ...',
-              controller: searchController,
               onChange: (value) {
                 BlocProvider.of<SearchBooksCubit>(context)
                     .fetchSearchBooks(category: value);
@@ -76,9 +75,11 @@ class SearchViewBody extends StatelessWidget {
                 child: BlocBuilder<SearchBooksCubit, SearchBooksState>(
                   builder: (context, state) {
                     if (state is SearchBooksFailure) {
-                      return Text(
-                        state.errMessage,
-                        style: Styles.textStyle16,
+                      return const Center(
+                        child: Text(
+                          "No Suggestions",
+                          style: Styles.textStyle16,
+                        ),
                       );
                     } else if (state is SearchBooksSuccess) {
                       return ListView.separated(

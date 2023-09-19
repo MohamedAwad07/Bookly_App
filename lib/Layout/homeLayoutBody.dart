@@ -65,9 +65,11 @@ class HomeViewBody extends StatelessWidget {
                     ),
                   );
                 } else if (state is FeaturedBooksFailure) {
-                  return Text(
-                    state.errMessage,
-                    style: Styles.textStyle16,
+                  return const Center(
+                    child: Text(
+                      "No Suggestions",
+                      style: Styles.textStyle16,
+                    ),
                   );
                 } else if (state is FeaturedBooksLoading) {
                   return const Center(child: CircularProgressIndicator());
@@ -157,9 +159,11 @@ class HomeViewBody extends StatelessWidget {
                               ),
                           itemCount: state.books.length);
                     } else if (state is NewsetBooksFailure) {
-                      return Text(
-                        state.errMessage,
-                        style: Styles.textStyle16,
+                      return const Center(
+                        child: Text(
+                          "No Suggestions",
+                          style: Styles.textStyle16,
+                        ),
                       );
                     } else {
                       return const Center(

@@ -230,7 +230,6 @@ Widget ratingItem({
 
 Widget defaultTextField({
   required String label,
-  required TextEditingController controller,
   void Function(String)? onChange,
   IconButton? sufIcon,
   TextInputType? keyboard,
@@ -246,10 +245,9 @@ Widget defaultTextField({
       start: 25.0,
       end: 25.0,
     ),
-    child: TextFormField(
+    child: TextField(
       onChanged: onChange,
       style: Theme.of(context).textTheme.titleMedium,
-      controller: controller,
       obscureText: isObscure,
       keyboardType: keyboard,
       decoration: InputDecoration(

@@ -48,7 +48,7 @@ class BookDetailsViewBody extends StatelessWidget {
                 ),
                 Center(
                   child: Text(
-                    detailBook.title ??"unknown",
+                    detailBook.title ?? "unknown",
                     style: Styles.textStyle30.copyWith(fontSize: 20.0),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
@@ -59,7 +59,7 @@ class BookDetailsViewBody extends StatelessWidget {
                   height: 6.0,
                 ),
                 Text(
-                  detailBook.authors?[0] ??"unknown",
+                  detailBook.authors?[0] ?? "unknown",
                   style: Styles.textStyle18.copyWith(
                     color: Colors.grey,
                     fontStyle: FontStyle.italic,
@@ -70,9 +70,10 @@ class BookDetailsViewBody extends StatelessWidget {
                   height: 16.0,
                 ),
                 ratingItem(
-                    isDetail: true,
-                    averageRating: detailBook.averageRating,
-                    rating: detailBook.ratingsCount),
+                  isDetail: true,
+                  averageRating: detailBook.averageRating,
+                  rating: detailBook.ratingsCount,
+                ),
                 const SizedBox(
                   height: 32.0,
                 ),
@@ -181,8 +182,8 @@ class BookDetailsViewBody extends StatelessWidget {
                         ),
                       );
                     } else if (state is SimilarBooksFailure) {
-                      return Text(
-                        state.errMessage,
+                      return const Text(
+                        "No suggestions",
                         style: Styles.textStyle16,
                       );
                     } else {
