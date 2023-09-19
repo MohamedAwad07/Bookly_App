@@ -2,6 +2,8 @@
 
 A new Flutter project.
 
+you can preview free books and search for a specific book and alot features waiting you .
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
