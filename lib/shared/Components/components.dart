@@ -96,7 +96,7 @@ Widget customBestSellerItem({
               Padding(
                 padding: const EdgeInsetsDirectional.only(top: 7.0),
                 child: Text(
-                  bookModel.volumeInfo.title!,
+                  bookModel.volumeInfo.title ??"unknown",
                   style: Styles.textStyle20.copyWith(fontSize: 18.0),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
@@ -106,7 +106,7 @@ Widget customBestSellerItem({
                 height: 7.0,
               ),
               Text(
-                bookModel.volumeInfo.authors![0],
+                bookModel.volumeInfo.authors?[0] ??"unknown",
                 style: Styles.textStyle14.copyWith(color: Colors.grey),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
@@ -231,6 +231,7 @@ Widget ratingItem({
 Widget defaultTextField({
   required String label,
   required TextEditingController controller,
+  void Function(String)? onChange,
   IconButton? sufIcon,
   TextInputType? keyboard,
   bool isObscure = false,
@@ -245,7 +246,8 @@ Widget defaultTextField({
       start: 25.0,
       end: 25.0,
     ),
-    child: TextField(
+    child: TextFormField(
+      onChanged: onChange,
       style: Theme.of(context).textTheme.titleMedium,
       controller: controller,
       obscureText: isObscure,

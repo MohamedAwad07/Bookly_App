@@ -48,7 +48,7 @@ class BookDetailsViewBody extends StatelessWidget {
                 ),
                 Center(
                   child: Text(
-                    detailBook.title!,
+                    detailBook.title ??"unknown",
                     style: Styles.textStyle30.copyWith(fontSize: 20.0),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
@@ -59,7 +59,7 @@ class BookDetailsViewBody extends StatelessWidget {
                   height: 6.0,
                 ),
                 Text(
-                  detailBook.authors![0],
+                  detailBook.authors?[0] ??"unknown",
                   style: Styles.textStyle18.copyWith(
                     color: Colors.grey,
                     fontStyle: FontStyle.italic,
