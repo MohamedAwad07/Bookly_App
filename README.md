@@ -2,7 +2,7 @@
 
 A new Flutter project.
 
-you can preview free books and search for a specific book and alot features waiting you .
+You have the opportunity to preview complimentary books, explore a vast selection of titles, and enjoy numerous exciting features that await you.
 
 ## Getting Started
 
