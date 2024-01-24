@@ -1,18 +1,14 @@
-# bookly
+Bookly - Flutter Book Discovery and Reading App
 
-A new Flutter project.
 
-You have the opportunity to preview complimentary books, explore a vast selection of titles, and enjoy numerous exciting features that await you.
+Bookly is a Flutter project that allows users to search for books, discover beautiful free books, and read them seamlessly. This app is designed to provide a user-friendly experience for book enthusiasts who love exploring new titles and reading them on the go.
 
-## Getting Started
+Features
+Search for Books: Easily search for your favorite books by title, author, or keywords.
 
-This project is a starting point for a Flutter application.
+Discover Free Books: Explore a curated collection of beautiful free books available for reading.
 
-A few resources to get you started if this is your first Flutter project:
+Read Books: Dive into the world of literature with a clean and immersive reading interface.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Book Details: Get detailed information about each book, including the author, genre, and a brief synopsis.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
